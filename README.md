@@ -1,6 +1,8 @@
 # Treecapitator
  A Spigot plugin allowing players to fell trees in one go with an axe, based off of the Forge mod.
 
+ This is a fork of the original Spigot plugin that ignores any stripped logs.
+
 ## Usage
 When a player with the `treecapitator.fell` permission breaks a log with an axe, the plugin will also break all other logs upwards and outwards.
 Any logs directly below the original log broken will remain.
