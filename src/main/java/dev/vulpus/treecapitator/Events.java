@@ -30,11 +30,7 @@ public class Events implements Listener {
         ItemStack tool = player.getInventory().getItemInMainHand();
         Block block = event.getBlock();
         String type = block.getType().name();
-        if (player.hasPermission("treecapitator.fell") && !player.getGameMode().equals(GameMode.CREATIVE) && tool.getType().name().endsWith("_AXE") && type.endsWith("_LOG") && (!player.isSneaking() || !config.getBoolean("sneak-ignore", config.getDefaults().getBoolean("sneak-ignore")))) {
-
-            if (type.startsWith("STRIPPED_")) {
-                type = type.substring(9);
-            }
+        if (player.hasPermission("treecapitator.fell") && !player.getGameMode().equals(GameMode.CREATIVE) && tool.getType().name().endsWith("_AXE") && !type.startsWith("STRIPPED_") && type.endsWith("_LOG") && (!player.isSneaking() || !config.getBoolean("sneak-ignore", config.getDefaults().getBoolean("sneak-ignore")))) {
 
             List<Block> logs = m.getLogs(block.getLocation(), type);
             logs.remove(block);

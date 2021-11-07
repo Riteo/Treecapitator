@@ -17,7 +17,8 @@ public class Methods {
 
                     Location loc = origin.clone().add(x, y, z);
                     Block block = loc.getBlock();
-                    if (!origin.equals(loc) && block.getType().name().endsWith(type)) {
+                    String blockType = block.getType().name();
+                    if (!origin.equals(loc) && blockType.endsWith(type) && !blockType.startsWith("STRIPPED_")) {
 
                         blocks.add(block);
 
